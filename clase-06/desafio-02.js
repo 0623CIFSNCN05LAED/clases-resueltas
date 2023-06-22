@@ -54,13 +54,14 @@ const peliculasProximasAEstrenar = [
   "Vértigo",
   "Nick",
   "Avatar",
-].join(", ");
-console.log("3b", peliculasProximasAEstrenar);
+];
+const peliculasProximasAEstrenarTexto = peliculasProximasAEstrenar.join(", ");
+console.log("3b", peliculasProximasAEstrenarTexto);
 // ● Una vez creada la estructura, una de las programadoras del equipo indica que la
 // primera película incorporada a la estructura no es una película sino un video juego.
 // Por tal motivo, te encomiendan la tarea de excluir dicho elemento de la estructura.
 
-peliculas.shift();
+peliculasProximasAEstrenar.shift();
 // 4. Finalmente, el Tech Leader te solicita crear una función que reciba por parámetro
 // ambas estructuras creadas y debe devolver un nueva nueva estructura con todas las 3
 // películas, para ello te recomendamos que investigues lo que hace el método
@@ -70,7 +71,4 @@ function peliculasConcatenadas(peliculas, peliculasProximasAEstrenar) {
   return peliculas.concat(peliculasProximasAEstrenar);
 }
 
-console.log(
-  "4a",
-  peliculasConcatenadas(peliculas, peliculasProximasAEstrenar.split(", "))
-);
+console.log("4a", peliculasConcatenadas(peliculas, peliculasProximasAEstrenar));
