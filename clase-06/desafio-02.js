@@ -31,12 +31,9 @@ function peliculaEnMayuscula(pelicula) {
 
 const peliculaMasVendida = "Thor: amor y trueno";
 
-const peliculaEnMayusculaIndex = peliculas.indexOf(peliculaMasVendida);
+const peliculaIndex = peliculas.indexOf(peliculaMasVendida);
 
-const peliculaEnMayusculaEliminada = peliculas.slice(
-  peliculaEnMayusculaIndex,
-  peliculaEnMayusculaIndex + 1
-);
+const peliculaEliminada = peliculas.splice(peliculaIndex, 2);
 
 peliculas.unshift(peliculaEnMayuscula(peliculaMasVendida));
 
