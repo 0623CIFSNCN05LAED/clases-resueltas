@@ -1,0 +1,7 @@
+[
+  { "name": "Argentina", "code": "Arg" },
+  { "name": "Colombia", "code": "Col" },
+  { "name": "México", "code": "Mex" },
+  { "name": "Uruguay", "code": "Uru" },
+  { "name": "Perú", "code": "Per" }
+]
