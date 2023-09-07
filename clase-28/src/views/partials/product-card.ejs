@@ -5,7 +5,7 @@
                 <img src="/images/products/<%= product.image %>" alt="imagen de producto <%= product.name %>">
             </figure>
             <article class="product-box_data">
-                <h2>$<%= getFinalPrice(product) %></h2>
+                <h2><%= product.priceWithDiscount %></h2>
                 <span><%= product.discount %> % OFF</span>
                 <p><%= product.name %></p>
                 <i class="fas fa-truck"></i>

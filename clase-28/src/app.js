@@ -6,8 +6,6 @@ const logger = require("morgan");
 const path = require("path");
 const methodOverride = require("method-override"); // Pasar poder usar los métodos PUT y DELETE
 
-const viewUtils = require("./utils/view-utils");
-
 // ************ express() - (don't touch) ************
 const app = express();
 
@@ -25,11 +23,8 @@ app.set("views", path.join(__dirname, "/views")); // Define la ubicación de la 
 
 // ************ WRITE YOUR CODE FROM HERE ************
 
-app.locals = viewUtils;
-
 // ************ Route System require and use() ************
 const mainRouter = require("./routes/main"); // Rutas main
-const productsRouter = require("./routes/products"); // Rutas /products
 
 app.use("/", mainRouter);
 

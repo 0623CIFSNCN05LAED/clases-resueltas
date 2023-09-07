@@ -33,16 +33,16 @@
 
                         <% if (product.discount) { %>
                         <p class="product-detail-price small">
-                            <span>$<%= getPrice(product) %></span>
+                            <span><%= product.price %></span>
                             /
-                            <b><%= getDiscount(product) %>% OFF</b>
+                            <b><%= product.discount %>% OFF</b>
                         </p>
                         <p class="product-detail-price">
-                            $<%= getFinalPrice(product) %>
+                            <%= product.priceWithDiscount%>
                         </p>
                         <% } else { %>
                         <p class="product-detail-price">
-                            $<%= getFinalPrice(product) %>
+                            <%= product.priceWithDiscount %>
                         </p>
                         <% } %>
 
@@ -60,7 +60,7 @@
                         <a href="#" class="buy-now-button">COMPRAR AHORA</a>
                         <hr />
 
-                        <a href="/products/<%= product.id %>/edit" class="action-button edit">EDITAR PRODUCTO</a>
+                        <a href="/products/edit/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a>
                         <form action="/products/<%= product.id %>?_method=delete" method="POST"
                             style="display: inline-flex">
                             <button type="submit" class="action-button delete">
