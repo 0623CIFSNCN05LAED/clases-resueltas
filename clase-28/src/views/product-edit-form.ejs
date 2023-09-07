@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Editando: ' + '¿?'}) %>
+<body>
+	<!-- Header -->
+	<%- include('partials/headerNavbar') %>
+	<!-- /Header -->
+
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Estás editando: <i>PRODUCT NAME</i></h2>
+			</div>
+		</div>
+		<div class="col-12">
+			<form action="/products/edit/¿?" method="___">
+				<div class="row product-detail">
+					<div class="col-12 col-md-6">
+						<label for="name" class="form-label">Nombre del producto:</label>
+						<input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="price" class="form-label">Precio del producto:</label>
+						<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="discount" class="form-label">Descuento:</label>
+						<input type="text" id="discount" name="discount" placeholder="Ej: 15" class="form-input">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="category" class="form-label">Categoría:</label>
+						<select name="category" id="category" class="form-input">
+							<option value="">Elegí</option>
+							<option value="in-sale">En oferta</option>
+							<option value="visited" >Últimos agregados</option>
+						</select>
+					</div>
+					<div class="col-12">
+						<label for="description" class="form-label">Descipción:</label>
+						<textarea name="description" id="description" class="form-input"><%= productToEdit.description %></textarea>
+					</div>
+					<div class="col-12">
+						<button type="submit" class="buy-now-button">Guardar producto</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+	<!-- /todos los productos -->
+
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
+</body>	
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head', {title: '¿?'}) %>
+<body>
+	<!-- Header -->
+	<%- include('partials/headerNavbar') %>
+	<!-- /Header -->
+
+	<!-- product detail -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Detalle del producto: NOMBRE DEL PRODUCTO</h2>
+			</div>
+		</div>
+		<div class="product-detail">
+			<div class="row">
+				<div class="col-12 col-lg-8">
+					<img src="/images/products/¿?" alt="product image" class="product-detail-img">
+					<p class="product-detail-description">
+						PRODUCT DESCRIPTION
+					</p>
+				</div>
+				<div class="col-12 col-lg-4">
+					<article class="product-detail-info">
+						<h2 class="product-detail-title">PRODUCT NAME</h2>
+						
+							<p class="product-detail-price small">
+								<span>$PRICE</span>
+								/
+								<b>DISCOUNT% OFF</b>
+							</p>
+							<p class="product-detail-price">
+								$FINAL PRICE
+							</p>
+							<p class="product-detail-price">
+								$PRICE
+							</p>
+
+						<ul class="actions-list">
+							<li>
+								<i class="fas fa-credit-card"></i>
+								<p>Pagá en 12 cuotas sin interes</p>
+							</li>
+							<li>
+								<i class="fas fa-store"></i>
+								<p>Retiro gratis en locales del vendedor</p>
+							</li>
+						</ul>
+
+						<a href="#" class="buy-now-button">COMPRAR AHORA</a>
+						<hr>
+
+						<a href="/products/edit/¿?" class="action-button edit">EDITAR PRODUCTO</a>
+						<form action="/products/delete/¿¿" method="POST" style="display: inline-flex">
+							<button type="submit" class="action-button delete">ELIMINAR</button>
+						</form>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /product detail -->
+
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
+
+</body>	
+</html>

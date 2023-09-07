@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Resultados de tu búsqueda'}) %>
+<body>
+	<!-- Header -->
+	<%- include('partials/headerNavbar') %>
+	<!-- /Header -->
+	
+	<!-- Banner -->
+	<div class="banner"></div>
+	<!-- /Banner -->
+
+	<!-- todos los productos -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Resultados de la búsqueda: ¿?</h2>
+			</div>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/products/detail/¿?">
+							<figure class="product-box_image">
+								<img src="/images/products/¿?" alt="imagen de producto">
+							</figure>
+							<article class="product-box_data">
+								<h2>$FINAL PRICE</h2>
+								<span>DISCOUNT% OFF</span>
+								<p>PRODUCT NAME</p>
+								<i class="fas fa-truck"></i>
+							</article>
+						</a>
+					</section>
+				</div>
+
+			<div class="col-12">
+				<h2 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
+			</div>
+		</div>
+	</div>
+	<!-- /todos los productos -->
+
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
+</body>	
+</html>
