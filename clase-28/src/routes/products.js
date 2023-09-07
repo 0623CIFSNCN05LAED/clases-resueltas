@@ -8,18 +8,18 @@ const productsController = require("../controllers/productsController");
 // /*** GET ALL PRODUCTS ***/
 router.get("/", productsController.index);
 
-// /*** CREATE ONE PRODUCT ***/
+/*** CREATE ONE PRODUCT ***/
 router.get("/create/", productsController.create);
 router.post("/", productsController.store);
 
-// /*** GET ONE PRODUCT ***/
-// router.???('/:id/', productsController.detail);
+/*** GET ONE PRODUCT ***/
+router.get("/:id/", productsController.detail);
 
-// /*** EDIT ONE PRODUCT ***/
-// router.???('/:id/???', productsController.edit);
-// router.???('/:id', productsController.update);
+/*** EDIT ONE PRODUCT ***/
+router.get("/:id/edit", productsController.edit);
+router.put("/:id", productsController.update);
 
-// /*** DELETE ONE PRODUCT***/
-// router.???('/:id', productsController.destroy);
+/*** DELETE ONE PRODUCT***/
+router.delete("/:id", productsController.destroy);
 
 module.exports = router;

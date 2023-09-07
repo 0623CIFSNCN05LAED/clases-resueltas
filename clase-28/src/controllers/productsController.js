@@ -10,18 +10,18 @@ const controller = {
 
   // Detail - Detail from one product
   detail: (req, res) => {
-    // Do the magic
+    const id = req.params.id;
+    const product = productService.getProduct(id);
+    res.render("detail", { product });
   },
 
   // Create - Form to create
   create: (req, res) => {
-    // Do the magic
     res.render("product-create-form");
   },
 
   // Create -  Method to store
   store: (req, res) => {
-    // Do the magic
     const product = req.body;
     console.log(product);
     res.redirect("/products");
@@ -29,16 +29,22 @@ const controller = {
 
   // Update - Form to edit
   edit: (req, res) => {
-    // Do the magic
+    const id = req.params.id;
+    const product = productService.getProduct(id);
+    res.render("product-edit-form", { product });
   },
   // Update - Method to update
   update: (req, res) => {
-    // Do the magic
+    const product = req.body;
+    console.log(product);
+    res.redirect("/products");
   },
 
   // Delete - Delete one product from DB
   destroy: (req, res) => {
-    // Do the magic
+    const id = req.params.id;
+    console.log(`deleting product id: ${id}`);
+    res.redirect("/products");
   },
 };
 

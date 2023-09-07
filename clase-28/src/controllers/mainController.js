@@ -2,7 +2,6 @@ const productServices = require("../services/productService");
 
 const controller = {
   index: (req, res) => {
-    // Do the magic
     const visitedProducts = productServices.getVisitedProducts();
     const inSaleProducts = productServices.getInSaleProducts();
 
@@ -12,7 +11,9 @@ const controller = {
     });
   },
   search: (req, res) => {
-    // Do the magic
+    const keywords = req.query.keywords;
+    const foundProducts = productServices.searchProducts(keywords);
+    res.render("results", { foundProducts });
   },
 };
 
