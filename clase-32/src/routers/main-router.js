@@ -2,9 +2,10 @@ const { Router, urlencoded } = require("express");
 const mainController = require("../controllers/main-controller");
 const validations = require("../validations/login-validations");
 const validateForm = require("../middlewares/validate-form");
+const userGuard = require("../middlewares/user-guard");
 const router = Router();
 
-router.get("/", mainController.home);
+router.get("/", userGuard, mainController.home);
 
 router.get("/login", mainController.showLogin);
 router.post(
