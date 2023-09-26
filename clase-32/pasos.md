@@ -40,4 +40,17 @@
 
 # Auth guard (si no hay sesión válida redirigir al login)
 
+- crear middleware
+- incluir middleware en la ruta
+
+# Logout
+
+- creamos form de logout
+- agregamos ruta correspondiente
+- agregamos método para borrar la sesión
+
 # Flash errors (mostrar errores de validación y borrarlos cuando sean corregidos)
+
+- mandar los errores al front
+- si no hay más errores, borrarlos y mantener los que sigan siendo errores
+- mantener la data que ya agrego el usuario

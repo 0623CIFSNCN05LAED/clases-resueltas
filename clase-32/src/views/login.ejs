@@ -5,29 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
     <form action="/login" method="post">
         <div>
             <label for="name">Nombre: </label>
-            <input name="name" id="name" type="text">
+            <input name="name" id="name" type="text" value="<%= oldData ? oldData.name : ""  %>">
+            <% if(errors && errors.name) { %>
+            <p class="error"><%= errors.name.msg %> </p>
+            <% } %>
         </div>
         <div>
-            <label for="'color">Color Favorito:</label>
+            <label for="color">Color Favorito:</label>
             <select name="color" id="color">
-                <option value="red">Rojo</option>
-                <option value="blue">Azul</option>
-                <option value="green">Verde</option>
+                <option value="red" <%= oldData && oldData.color === 'red' ? "selected" : "" %>>Rojo</option>
+                <option value="blue" <%= oldData && oldData.color === 'blue' ? "selected" : "" %>>Azul</option>
+                <option value="green" <%= oldData && oldData.color === 'green' ? "selected" : "" %>>Verde</option>
             </select>
+            <% if(errors && errors.color) { %>
+            <p class="error"><%= errors.color.msg %> </p>
+            <% } %>
         </div>
         <div>
             <label for="email">Email: </label>
-            <input name="email" id="email" type="text">
+            <input name="email" id="email" type="text" value="<%= oldData ? oldData.email : ""  %>">
+            <% if(errors && errors.email) { %>
+            <p class="error"><%= errors.email.msg %> </p>
+            <% } %>
         </div>
         <div>
             <label for="birthDate">Fecha de Nacimiento: </label>
-            <input name="birthDate" id="birthDate" type="date">
+            <input name="birthDate" id="birthDate" type="date" value="<%= oldData ? oldData.birthDate : ""  %>">
+            <% if(errors && errors.birthDate) { %>
+            <p class="error"><%= errors.birthDate.msg %> </p>
+            <% } %>
         </div>
         <button>Submit!</button>
 

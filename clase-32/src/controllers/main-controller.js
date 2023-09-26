@@ -1,6 +1,15 @@
 module.exports = {
   showLogin: (request, response) => {
-    response.render("login");
+    // Flash errors
+    const errors = request.session.errors;
+    const oldData = request.session.oldData;
+    request.session.errors = null;
+    request.session.oldData = null;
+    console.log(request.session);
+    response.render("login", {
+      errors: errors ? errors : null,
+      oldData: oldData ? oldData : null,
+    });
   },
   //post
   login: (request, response) => {
