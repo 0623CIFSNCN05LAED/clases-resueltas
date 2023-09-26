@@ -10,6 +10,10 @@ module.exports = {
 
     response.redirect("/");
   },
+  logout: (request, response) => {
+    request.session.destroy();
+    response.redirect("/login");
+  },
   home: (request, response) => {
     const data = request.session.userData;
     response.render("index", {
