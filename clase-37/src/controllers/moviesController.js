@@ -11,4 +11,14 @@ module.exports = {
       res.render("newestMovies", { movies });
     });
   },
+  recomended: (req, res) => {
+    movieService.getRecomendedMovies().then((movies) => {
+      res.render("recommendedMovies", { movies });
+    });
+  },
+  detail: (req, res) => {
+    movieService.getMovieDetail(req.params.id).then((movie) => {
+      res.render("moviesDetail", { movie });
+    });
+  },
 };
