@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dayjs": "^1.11.10",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "method-override": "^3.0.0",
     "mysql2": "^2.2.5",
     "sequelize": "^6.5.0"
   },
