@@ -25,6 +25,15 @@
             <p><input type="date" name="release_date" id="release_date" value="<%= movie.release_date %>" required></p>
             <label for="length">Length </label>
             <p><input type="number" name="length" id="" value="<%= movie.length %>" required></p>
+            <label for="genre_id">Genre </label>
+            <p>
+                <select name="genre_id" id="genre_id">
+                    <% genres.forEach(function(genre){ %>
+                    <option value="<%= genre.id %>" <%= genre.id == movie.genre_id ? 'selected' : '' %>>
+                        <%= genre.name %></option>
+                    <% }) %>
+                </select>
+            </p>
             <br>
             <p> <button class="botonAgregar" type="submit">Actualizar</button>
 

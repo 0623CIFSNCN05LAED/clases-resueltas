@@ -1,4 +1,5 @@
 const movieService = require("../services/movie-service");
+const genreService = require("../services/genre-service");
 
 module.exports = {
   list: (req, res) => {
@@ -22,7 +23,10 @@ module.exports = {
     });
   },
   add: (req, res) => {
-    res.render("moviesAdd");
+    const genres = genreService.getAllGenres();
+    genres.then((genres) => {
+      res.render("moviesAdd", { genres });
+    });
   },
   create: (req, res) => {
     movieService.createMovie(req.body).then((movie) => {
@@ -30,9 +34,11 @@ module.exports = {
     });
   },
   edit: (req, res) => {
-    console.log("req.params", req.params);
-    movieService.getMovieDetail(req.params.id).then((movie) => {
-      res.render("moviesEdit", { movie });
+    const genres = genreService.getAllGenres();
+    const movie = movieService.getMovieDetail(req.params.id);
+    Promise.all([genres, movie]).then(([genres, movie]) => {
+      console.log("movie", movie);
+      res.render("moviesEdit", { movie, genres });
     });
   },
   update: (req, res) => {

@@ -18,5 +18,21 @@ module.exports = (sequelize, DataTypes) => {
       updatedAt: "updated_at",
     }
   );
+
+  Model.associate = (db) => {
+    Model.belongsToMany(db.Movies, {
+      as: "movies",
+      through: "actor_movie",
+      foreignKey: "actor_id",
+      otherKey: "movie_id",
+      timestamps: false,
+    });
+
+    Model.belongsTo(db.Movies, {
+      as: "favoriteMovie",
+      foreignKey: "favorite_movie_id",
+    });
+  };
+
   return Model;
 };

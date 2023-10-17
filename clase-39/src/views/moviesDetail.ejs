@@ -20,6 +20,10 @@
     <p>LENGTH: <%= movie.length + ' min'%> </p>
     <p>RELEASE DATE: <%= movie.release_date %> </p>
     <p>GENRE: <%= movie.genreName  %></p>
+    <p>ACTORS: <%= 
+        movie.actors.map(function(actor){
+            return actor.firstName + ' ' + actor.lastName
+        }).join(', ')    %></p>
     <a href="/movies/delete/<%= movie.id %>?_method=DELETE">Borrar la
         Película</a>
     <a href="/movies/edit/<%= movie.id %>">Editar la Película</a>

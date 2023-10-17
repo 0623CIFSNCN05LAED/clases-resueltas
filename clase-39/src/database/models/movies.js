@@ -20,6 +20,19 @@ module.exports = (sequelize, DataTypes) => {
       as: "genre",
       foreignKey: "genre_id",
     });
+
+    Model.belongsToMany(db.Actors, {
+      as: "actors",
+      through: "actor_movie",
+      foreignKey: "movie_id",
+      otherKey: "actor_id",
+      timestamps: false,
+    });
+
+    Model.hasOne(db.Actors, {
+      as: "favorite_movie",
+      foreignKey: "favorite_movie_id",
+    });
   };
 
   return Model;
