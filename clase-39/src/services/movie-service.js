@@ -20,14 +20,21 @@ module.exports = {
     });
   },
   getMovieDetail: (id) => {
-    return Movies.findByPk(id).then((movie) => ({
-      id: movie.id,
-      title: movie.title,
-      rating: movie.rating,
-      awards: movie.awards,
-      release_date: dayjs(movie.release_date).format("YYYY-MM-DD"),
-      length: movie.length,
-    }));
+    return Movies.findByPk(id, {
+      include: ["genre"],
+    }).then((movie) => {
+      // return movie.toJSON()
+
+      return {
+        id: movie.id,
+        title: movie.title,
+        rating: movie.rating,
+        awards: movie.awards,
+        release_date: dayjs(movie.release_date).format("YYYY-MM-DD"),
+        genreName: movie.genre?.name ?? "No tiene género",
+        length: movie.length,
+      };
+    });
   },
   createMovie: (body) => {
     return Movies.create({

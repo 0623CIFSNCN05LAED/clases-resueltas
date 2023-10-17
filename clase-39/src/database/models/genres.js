@@ -12,5 +12,13 @@ module.exports = (sequelize, DataTypes) => {
       updatedAt: "updated_at",
     }
   );
+
+  Model.associate = (db) => {
+    Model.hasMany(db.Movies, {
+      as: "movie",
+      foreignKey: "genre_id",
+    });
+  };
+
   return Model;
 };

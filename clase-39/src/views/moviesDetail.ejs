@@ -19,6 +19,7 @@
     <p>AWARDS: <%= movie.awards %> </p>
     <p>LENGTH: <%= movie.length + ' min'%> </p>
     <p>RELEASE DATE: <%= movie.release_date %> </p>
+    <p>GENRE: <%= movie.genreName  %></p>
     <a href="/movies/delete/<%= movie.id %>?_method=DELETE">Borrar la
         Película</a>
     <a href="/movies/edit/<%= movie.id %>">Editar la Película</a>
