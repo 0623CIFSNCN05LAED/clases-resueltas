@@ -21,7 +21,19 @@
     <br>
     <p>RELEASE YEAR: <%= movie.Year %>
     </p>
-    <img src="<%= movie.Poster %>" />
+    <div class="flex-container w-600px">
+        <div class="w-40">
+    
+            <img src="<%= movie.Poster %>" alt="movie poster" />
+        </div>
+        <div class="w-40">
+            <p>
+                <%= plot %>
+            </p>
+            <img src="<%= countryFlag %>" alt="country flag" />
+        </div>
+    </div>
+
 
     <a href="/movies">Volver</a>
 

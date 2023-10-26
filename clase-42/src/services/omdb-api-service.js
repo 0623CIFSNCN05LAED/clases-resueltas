@@ -13,4 +13,10 @@ module.exports = {
     }
     return null;
   },
+  findMovie: async (imdbID) => {
+    const response = await fetch(`${OMDB_API_URL}i=${imdbID}&plot=full`);
+    const result = await response.json();
+
+    return result;
+  },
 };

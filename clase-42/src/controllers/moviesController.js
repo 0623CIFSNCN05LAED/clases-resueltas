@@ -1,6 +1,8 @@
 const movieService = require("../services/movie-service");
 const genreService = require("../services/genre-service");
 const omdbApiService = require("../services/omdb-api-service");
+const restCountriesService = require("../services/countries-api-service");
+const countriesApiService = require("../services/countries-api-service");
 
 module.exports = {
   list: (req, res) => {
@@ -37,7 +39,14 @@ module.exports = {
 
     const movieInApi = await omdbApiService.search(query);
     if (movieInApi) {
-      return res.render("moviesOMDBDetail", { movie: movieInApi });
+      const movieDetail = await omdbApiService.findMovie(movieInApi.imdbID);
+      const countryName = movieDetail.Country;
+      const countryFlag = await countriesApiService.getCountryFlag(countryName);
+      return res.render("moviesOMDBDetail", {
+        movie: movieInApi,
+        plot: movieDetail.Plot,
+        countryFlag,
+      });
     }
 
     res.send("404");

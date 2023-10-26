@@ -17,3 +17,18 @@ img{
 figure{
   width: 20%;
 }
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-600px {
+  width: 600px;
+}
