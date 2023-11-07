@@ -120,3 +120,6 @@ figure {
   display: block;
   width: 40px;
 }
+.container-movies-list {
+  width: 300px;
+}

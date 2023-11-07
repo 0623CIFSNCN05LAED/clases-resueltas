@@ -29,6 +29,16 @@ window.onload = function () {
     }
   }
 
+  const logo = document.querySelector(".logoDH");
+  const menu = document.querySelector("#menu");
+
+  logo.addEventListener("click", function () {
+    menu.classList.toggle("mostrar");
+  });
+
+  menu.addEventListener("mouseleave", function () {
+    menu.classList.remove("mostrar");
+  });
 
   container.style.display = "block";
 };
