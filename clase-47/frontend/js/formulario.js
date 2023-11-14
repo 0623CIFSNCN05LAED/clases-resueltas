@@ -1,14 +1,42 @@
 window.onload = () => {
-  let movie = {};
+    const titleInput = document.getElementById("title");
+    let movie = {};
 
-  // AGREGAR VALORES A LOS CAMPOS
-  // 1
-  // obtener la pelicula
-  // ¿de dónde? de la URL correspondiente de la API local...
-  // ¿Cómo? usando fet...
-  // ACA VA EL FETCH!!
+    fetch("http://localhost:3001/api/movies/3")
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        titleInput.value = json.data.title;
+        movie = json.data;
+      });
 
-  // 2
-  // capturar el title
-  // piso el value con el titulo de la movie de la API
+    const form = document.getElementById("form");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      console.log("titleInput.value", titleInput.value);
+      movie.title = titleInput.value;
+
+      updateMovie(movie);
+    });
+
+    function updateMovie(movie) {
+      console.log("movie", movie);
+      return fetch("http://localhost:3001/api/movies/update/" + movie.id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(movie),
+      });
+    }
+
+    const deleteBtn = document.getElementById("botonBorrar");
+    deleteBtn.addEventListener("click", () => {
+      fetch("http://localhost:3001/api/movies/delete/" + movie.id, {
+        method: "DELETE",
+      });
+    });
+
+
 }
