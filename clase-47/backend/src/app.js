@@ -2,14 +2,14 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
-// const cors = require("cors");
-// app.use(
-//   cors(
-//     (corsOptions = {
-//       origin: "*",
-//     })
-//   )
-// );
+const cors = require("cors");
+app.use(
+  cors(
+    (corsOptions = {
+      origin: "*",
+    })
+  )
+);
 
 // let allowCrossDomain = function (req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
@@ -40,4 +40,4 @@ app.use("/api/actors", apiActorsRouter);
 app.use("/api/genres", apiGenresRouter);
 
 //Activando el servidor desde express
-app.listen("3001", () => console.log("Servidor corriendo en el puerto 3031"));
+app.listen("3001", () => console.log("Servidor corriendo en el puerto"));
