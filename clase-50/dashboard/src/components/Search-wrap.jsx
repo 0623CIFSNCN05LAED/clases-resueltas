@@ -5,8 +5,6 @@ function SearchWrap(){
         color: 'cornflowerblue',
       };
     return (
-    <>
-        <div>Hola </div>
         <aside className="search-wrap">
         <div className="search">
             <label htmlFor="search">
@@ -29,7 +27,6 @@ function SearchWrap(){
             </button>
         </div>
         </aside>
-    </>
     )
 }
 

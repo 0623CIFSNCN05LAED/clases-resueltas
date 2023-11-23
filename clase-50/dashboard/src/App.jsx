@@ -1,11 +1,9 @@
-
-import SearchWrap from './components/Search-wrap'
-
+import Dashboard from "./components/Dashboard"
 
 function App() {
 
   return (
-    <SearchWrap/>
+    <Dashboard/>
   )
 }
 

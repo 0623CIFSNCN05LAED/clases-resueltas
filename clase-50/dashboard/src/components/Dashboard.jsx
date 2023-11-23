@@ -4,7 +4,6 @@ import SearchWrap from './Search-wrap';
 function Dashboard(){
     return (
     <div className="dashboard">
-        hola
         <SearchWrap/>
     </div>
         )
