@@ -1,12 +1,16 @@
 import './Dashboard.css'
-import SearchWrap from './Search-wrap';
+import Menu from "./Menu";
+import SearchWrap from "./Search-wrap";
+import ContentWrap from "./Content-wrap";
 
-function Dashboard(){
-    return (
+function Dashboard() {
+  return (
     <div className="dashboard">
-        <SearchWrap/>
+      <SearchWrap />
+      <Menu />
+      <ContentWrap />
     </div>
-        )
+  );
 }
 
 export default Dashboard;
