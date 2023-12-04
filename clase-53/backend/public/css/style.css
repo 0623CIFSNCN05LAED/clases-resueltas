@@ -1,0 +1,110 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.container{
+  display: none;
+}
+.contenido{
+  padding-top: 160px;
+}
+.destacadoPar{
+  padding: 15px;
+  text-align: justify;
+  color: white;
+  background-color: rgba(86, 96, 72, 0.7);
+  margin: 10px;
+}
+.destacadoImpar{
+  padding: 15px;
+  text-align: justify;
+  color: white;
+  background-color: rgba(35, 57, 80, 0.7);
+  margin: 10px;
+}
+
+.fondo{
+  background-image: url('/img/vikingsposter.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.fondoMoviesList{
+  background-image: url('/img/avengers.jpg');
+  background-repeat: no-repeat;
+  background-size: 50%;
+  width: 50%;
+  background-position: right;
+}
+.fondoCRUD{
+  padding: 30px;
+  background-image: url('/img/peliculas.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.fondoTransparente{
+  background-color:rgba(189,199,191,0.7);
+  width: 30%;
+  padding:10px;
+  margin: auto;
+  text-align: center;
+}
+
+a {
+  color: teal;
+  text-decoration: none;
+}
+img{
+  width: 100%;
+}
+figure{
+  width: 20%;
+}
+.titulo{
+  text-align: center;
+}
+.botonAgregar , .botonModificar{
+  color: white;
+  background-color: #198754;
+  padding: 10px;
+  border-radius: 10px;
+}
+.botonBorrar{
+  color: white;
+  background-color: #BB2D3B;
+  padding: 10px;
+  border-radius: 10px;
+}
+.botonVolver{
+  color: white;
+  background-color: #0B5ED7;
+  padding: 10px;
+  border-radius: 10px;
+}
+.formulario, .mostrarFormulario{
+  margin: auto;
+  width: 40%;
+  border-radius: 10px;
+}
+input, select{
+  width: 60%;
+  height: 25px;
+}
+.is-valid {
+  color: #198754;
+}
+
+.is-invalid {
+  color: #842029;
+}
+
+.alert-warning{
+  color:#842029;
+  background-color: #F8D7DA;
+  text-align: center;
+  border-radius: 10px;
+}
