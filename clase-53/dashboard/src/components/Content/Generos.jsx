@@ -1,4 +1,6 @@
-import GenreItem from "./Item-genero";
+import { Route } from "react-router-dom";
+import GenreDetail from "./Detalle-genero";
+import GenreLink from "./Link-genero";
 
 // const genres = [
 //   { id: 1, name: "Acción" },
@@ -38,41 +40,47 @@ class Generos extends Component {
     super(props);
     //Especifico de Generos
     this.state = {
-      genres : []
+      genres: [],
     };
   }
 
-componentDidMount(){
-  fetch('http://localhost:3001/api/genres').then((response) => {
-    return response.json();
-  })
-  .then((json) => {
-    const genres = json.data;
-    console.log('genres', genres);
-    this.setState({
-      genres: genres
-    })
-  })
-}
-
+  componentDidMount() {
+    fetch("http://localhost:3001/api/genres")
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        const genres = json.data;
+        console.log("genres", genres);
+        this.setState({
+          genres: genres,
+        });
+      });
+  }
 
   render() {
     return (
-      <section className="content">
-        <h2 className="mt-3">Géneros</h2>
-        <div className="list-group shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-          <button
-            type="button"
-            className="list-group-item list-group-item-action active text-center"
-            aria-current="true"
-          >
-            Listado de géneros de las películas
-          </button>
-          {this.state.genres.length === 0 ?
-            "Cargando..." :
-          this.state.genres.map((genre) => (
-            <GenreItem key={genre.id} name={genre.name} />
-          ))}
+      <section className="content row">
+        <div className="col-6">
+          <h2 className="mt-3">Géneros</h2>
+          <div className="list-group shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+            <button
+              type="button"
+              className="list-group-item list-group-item-action active text-center"
+              aria-current="true"
+            >
+              Listado de géneros de las películas
+            </button>
+            {this.state.genres.length === 0
+              ? "Cargando..."
+              : this.state.genres.map((genre) => (
+                  <GenreLink key={genre.id} name={genre.name} />
+                ))}
+          </div>
+        </div>
+        <div className="col-6">
+          <h2>Genero Seleccionado:</h2>
+          <Route path="/generos/:name" component={GenreDetail} />
         </div>
       </section>
     );
