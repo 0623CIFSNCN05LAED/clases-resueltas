@@ -1,0 +1,9 @@
+.dashboard {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-gap: 0;
+    grid-template-columns: 300px auto;
+    grid-template-rows: 80px auto;
+    grid-template-areas: 'menu search' 'menu content';
+}
