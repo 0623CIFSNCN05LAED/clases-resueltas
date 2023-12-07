@@ -12,6 +12,11 @@ export default function Sidebar() {
         <h3>Opciones</h3>
         <ul>
           <li>
+            <Link to="/search">
+              <i className="bi bi-search" style={iconStyle}></i>- Buscar
+            </Link>
+          </li>
+          <li>
             <Link to="/peliculas">
               <i className="bi bi-film" style={iconStyle}></i>- Películas
             </Link>

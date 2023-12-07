@@ -4,7 +4,7 @@ import PeliculasMasPopulares from "./Content/Peliculas-mas-populares";
 import Preventa from "./Content/Preventa";
 import ProximosEstrenos from "./Content/Proximos-estrenos";
 import { Route, Switch } from "react-router-dom";
-import GenreDetail from "./Content/Detalle-genero";
+import MoviesSearch from "./MoviesSearch";
 
 export default function ContentWrap() {
   return (
@@ -30,14 +30,13 @@ export default function ContentWrap() {
         <Route path="/generos">
           <Generos />
         </Route>
+        <Route path="/search">
+          <MoviesSearch />
+        </Route>
         <Route path="*">
           <p>404 - página no encontrada</p>
         </Route>
       </Switch>
-      <div className="col-6">
-        <h1>Genero Seleccionado:</h1>
-        <Route path="/generos/:name" component={GenreDetail} />
-      </div>
     </main>
   );
 }
